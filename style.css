@@ -1,0 +1,920 @@
+/* ==========================================
+   CONFIGURAÇÕES GERAIS
+   ========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --azul: #075b91;
+
+  --azul-escuro: #06466f;
+
+  --ciano: #09b8c4;
+
+  --texto: #17313f;
+
+  --texto-secundario: #687984;
+
+  --fundo: #f5f9fb;
+
+  --branco: #ffffff;
+
+  --borda: #dce7ec;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+
+  color: var(--texto);
+
+  background: var(--fundo);
+}
+
+/* ==========================================
+   CONTAINER
+   ========================================== */
+
+.container {
+  width: min(1100px, calc(100% - 40px));
+
+  margin: 0 auto;
+}
+
+/* ==========================================
+   CABEÇALHO
+   ========================================== */
+
+.header {
+  background: var(--branco);
+
+  border-bottom: 1px solid var(--borda);
+}
+
+.header-container {
+  width: min(1100px, calc(100% - 40px));
+
+  min-height: 145px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 45px;
+}
+
+/* LOGO */
+
+.logo {
+  width: 210px;
+
+  height: auto;
+
+  flex-shrink: 0;
+}
+
+/* TEXTO DO CABEÇALHO */
+
+.header-text {
+  padding-left: 45px;
+
+  border-left: 1px solid var(--borda);
+}
+
+.header-text h1 {
+  font-size: 38px;
+
+  line-height: 1.1;
+
+  color: var(--azul);
+
+  font-weight: 700;
+}
+
+.header-text h1 span {
+  color: var(--ciano);
+}
+
+.header-text p {
+  margin-top: 12px;
+
+  font-size: 16px;
+
+  color: var(--texto-secundario);
+}
+
+/* ==========================================
+   SEÇÃO DE CANDIDATOS
+   ========================================== */
+
+.candidatos-section {
+  position: relative;
+
+  padding: 0 0 80px;
+
+  background: var(--fundo);
+}
+
+/* ==========================================
+   ÁREA DOS FILTROS + IMAGEM
+   ========================================== */
+
+.candidatos-section::before {
+  content: "";
+
+  display: block;
+
+  height: 330px;
+
+  background-image:
+    linear-gradient(90deg, rgba(3, 61, 96, 0.88), rgba(3, 61, 96, 0.35)),
+    url("fundo-tamandare.jpg");
+
+  background-size: cover;
+
+  background-position: center;
+
+  margin-bottom: -185px;
+}
+
+/* ==========================================
+   CABEÇALHO DA SEÇÃO
+   ========================================== */
+
+.section-header {
+  position: relative;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+}
+
+.section-header h2 {
+  font-size: 30px;
+
+  color: var(--branco);
+}
+
+.section-header p {
+  margin-top: 7px;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  font-size: 14px;
+}
+
+/* CONTADOR */
+
+.contador {
+  background: #e6f8fa;
+
+  color: var(--azul);
+
+  padding: 8px 14px;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+
+  font-weight: bold;
+}
+
+/* ==========================================
+   FILTROS
+   ========================================== */
+
+.filtros {
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns: 2fr 1fr auto;
+
+  gap: 14px;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  padding: 20px;
+
+  border: 1px solid rgba(220, 231, 236, 0.9);
+
+  border-radius: 14px;
+
+  margin-bottom: 30px;
+
+  box-shadow: 0 8px 25px rgba(20, 60, 80, 0.12);
+}
+
+.campo-busca,
+.campo-filtro {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.filtros label {
+  font-size: 13px;
+
+  font-weight: bold;
+
+  color: var(--texto);
+}
+
+/* INPUT E SELECT */
+
+.filtros input,
+.filtros select {
+  width: 100%;
+
+  height: 44px;
+
+  padding: 0 13px;
+
+  border: 1px solid var(--borda);
+
+  border-radius: 8px;
+
+  background: white;
+
+  color: var(--texto);
+
+  font-size: 14px;
+
+  outline: none;
+}
+
+.filtros input::placeholder {
+  color: #9aa8af;
+}
+
+.filtros input:focus,
+.filtros select:focus {
+  border-color: var(--ciano);
+}
+
+/* BOTÃO LIMPAR */
+
+.btn-limpar {
+  align-self: flex-end;
+
+  height: 44px;
+
+  padding: 0 18px;
+
+  border: 1px solid var(--borda);
+
+  border-radius: 8px;
+
+  background: white;
+
+  color: var(--azul);
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.btn-limpar:hover {
+  background: #f0f8fa;
+
+  border-color: var(--ciano);
+}
+
+/* ==========================================
+   LISTA DE CANDIDATOS
+   ========================================== */
+
+.lista-candidatos {
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+
+  gap: 20px;
+
+  align-items: stretch;
+}
+
+/* ==========================================
+   CARD
+   ========================================== */
+
+.candidato-card {
+  min-height: 430px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  background: var(--branco);
+
+  border: 1px solid var(--borda);
+
+  border-radius: 14px;
+
+  padding: 24px;
+
+  box-shadow: 0 4px 15px rgba(20, 60, 80, 0.06);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.candidato-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 25px rgba(20, 60, 80, 0.1);
+}
+
+/* ==========================================
+   TOPO DO CARD
+   ========================================== */
+
+.card-topo {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid var(--borda);
+}
+
+.avatar {
+  width: 48px;
+
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e5f7f9;
+
+  color: var(--azul);
+
+  font-size: 20px;
+
+  font-weight: bold;
+}
+
+.card-topo h3 {
+  font-size: 18px;
+
+  color: var(--azul);
+
+  margin-bottom: 5px;
+}
+
+/* ==========================================
+   INFORMAÇÕES
+   ========================================== */
+
+.informacoes {
+  flex: 1;
+
+  padding: 18px 0 5px;
+}
+
+.informacao {
+  margin-bottom: 15px;
+}
+
+.rotulo {
+  display: block;
+
+  margin-bottom: 4px;
+
+  font-size: 11px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+
+  color: var(--texto-secundario);
+}
+
+.informacao strong {
+  display: block;
+
+  font-size: 14px;
+
+  line-height: 1.45;
+
+  font-weight: 500;
+
+  color: var(--texto);
+}
+
+/* ==========================================
+   CURSOS
+   ========================================== */
+
+.cursos-conteudo.limitado {
+  display: -webkit-box;
+
+  -webkit-box-orient: vertical;
+
+  -webkit-line-clamp: 3;
+
+  overflow: hidden;
+}
+
+.cursos-conteudo.expandido {
+  display: block;
+
+  overflow: visible;
+}
+
+/* ==========================================
+   BOTÃO MOSTRAR MAIS
+   ========================================== */
+
+.btn-mostrar-mais {
+  display: inline-block;
+
+  margin-top: 5px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--azul);
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.btn-mostrar-mais:hover {
+  color: var(--ciano);
+
+  text-decoration: underline;
+}
+
+/* ==========================================
+   TELEFONE
+   ========================================== */
+
+.card-footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: auto;
+
+  padding-top: 15px;
+
+  border-top: 1px solid var(--borda);
+
+  font-size: 13px;
+}
+
+.card-footer span {
+  color: var(--texto-secundario);
+}
+
+.card-footer strong {
+  color: var(--azul);
+}
+
+/* ==========================================
+   BOTÃO VER MAIS CANDIDATOS
+   ========================================== */
+
+.container-ver-mais {
+  grid-column: 1 / -1;
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  margin-top: 10px;
+}
+
+.btn-ver-mais {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 130px;
+
+  height: 44px;
+
+  padding: 0 25px;
+
+  border: 1px solid var(--azul);
+
+  border-radius: 8px;
+
+  background: var(--azul);
+
+  color: #ffffff;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 14px;
+
+  font-weight: bold;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  appearance: none;
+
+  -webkit-appearance: none;
+
+  box-shadow: none;
+
+  outline: none;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn-ver-mais:hover {
+  background: var(--azul-escuro);
+
+  border-color: var(--azul-escuro);
+
+  transform: translateY(-2px);
+}
+
+.btn-ver-mais:active {
+  transform: translateY(0);
+}
+
+/* ==========================================
+   NENHUM RESULTADO
+   ========================================== */
+
+.nenhum-resultado {
+  grid-column: 1 / -1;
+
+  background: var(--branco);
+
+  border: 1px solid var(--borda);
+
+  border-radius: 14px;
+
+  padding: 50px 20px;
+
+  text-align: center;
+}
+
+.nenhum-resultado h3 {
+  color: var(--azul);
+
+  font-size: 18px;
+}
+
+.nenhum-resultado p {
+  margin-top: 8px;
+
+  color: var(--texto-secundario);
+
+  font-size: 14px;
+}
+
+/* ==========================================
+   RODAPÉ
+   ========================================== */
+
+footer {
+  background: var(--azul-escuro);
+
+  padding: 25px 0;
+
+  color: white;
+}
+
+.footer-content {
+  display: grid;
+
+  grid-template-columns: 1.4fr 1fr auto;
+
+  align-items: center;
+
+  gap: 35px;
+}
+
+/* ==========================================
+   SETUR
+   ========================================== */
+
+.footer-setur {
+  display: flex;
+
+  align-items: center;
+
+  gap: 22px;
+}
+
+.logo-setur {
+  width: 92px;
+
+  height: 92px;
+
+  object-fit: contain;
+}
+
+.footer-setur-text {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.footer-setur-text p {
+  font-size: 14px;
+}
+
+.footer-setur-text strong {
+  font-size: 19px;
+}
+
+.footer-setur-text span {
+  font-size: 13px;
+
+  opacity: 0.9;
+}
+
+/* ==========================================
+   PREFEITURA
+   ========================================== */
+
+.footer-prefeitura {
+  min-height: 80px;
+
+  padding-left: 35px;
+
+  border-left: 1px solid rgba(255, 255, 255, 0.45);
+
+  display: flex;
+
+  align-items: center;
+}
+
+.logo-prefeitura {
+  width: 250px;
+
+  max-width: 100%;
+
+  height: auto;
+
+  object-fit: contain;
+}
+
+/* ==========================================
+   MENSAGEM DO RODAPÉ
+   ========================================== */
+
+.footer-mensagem {
+  min-height: 80px;
+
+  padding-left: 25px;
+
+  border-left: 1px solid rgba(255, 255, 255, 0.45);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 3px;
+}
+
+.footer-mensagem span,
+.footer-mensagem strong {
+  font-size: 13px;
+}
+
+.footer-mensagem strong {
+  font-size: 15px;
+}
+
+/* ==========================================
+   TABLET
+   ========================================== */
+
+@media (max-width: 850px) {
+  .header-container {
+    gap: 30px;
+  }
+
+  .logo {
+    width: 180px;
+  }
+
+  .header-text {
+    padding-left: 30px;
+  }
+
+  .header-text h1 {
+    font-size: 32px;
+  }
+
+  .filtros {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .campo-busca {
+    grid-column: 1 / -1;
+  }
+
+  .btn-limpar {
+    align-self: stretch;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-mensagem {
+    grid-column: 1 / -1;
+
+    border-left: none;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.45);
+
+    padding: 20px 0 0;
+  }
+}
+
+/* ==========================================
+   CELULAR
+   ========================================== */
+
+@media (max-width: 600px) {
+  .container {
+    width: calc(100% - 28px);
+  }
+
+  /* CABEÇALHO */
+
+  .header-container {
+    width: calc(100% - 28px);
+
+    min-height: 120px;
+
+    gap: 20px;
+  }
+
+  .logo {
+    width: 120px;
+  }
+
+  .header-text {
+    padding-left: 20px;
+  }
+
+  .header-text h1 {
+    font-size: 24px;
+  }
+
+  .header-text p {
+    font-size: 13px;
+  }
+
+  /* IMAGEM */
+
+  .candidatos-section::before {
+    height: 300px;
+
+    margin-bottom: -155px;
+
+    background-position: center center;
+  }
+
+  /* CANDIDATOS */
+
+  .candidatos-section {
+    padding: 0 0 60px;
+  }
+
+  .section-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+  .section-header h2 {
+    font-size: 26px;
+  }
+
+  /* FILTROS */
+
+  .filtros {
+    grid-template-columns: 1fr;
+  }
+
+  .campo-busca {
+    grid-column: auto;
+  }
+
+  /* CARDS */
+
+  .lista-candidatos {
+    grid-template-columns: 1fr;
+  }
+
+  .candidato-card {
+    min-height: 0;
+  }
+
+  /* BOTÃO VER MAIS */
+
+  .container-ver-mais {
+    margin-top: 10px;
+  }
+
+  .btn-ver-mais {
+    width: 100%;
+
+    max-width: 220px;
+  }
+
+  /* RODAPÉ */
+
+  .footer-content {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .footer-setur {
+    align-items: flex-start;
+  }
+
+  .footer-prefeitura {
+    min-height: auto;
+
+    padding: 25px 0 0;
+
+    border-left: none;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.45);
+  }
+
+  .logo-prefeitura {
+    width: 220px;
+  }
+
+  .footer-mensagem {
+    min-height: auto;
+
+    padding: 25px 0 0;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.45);
+  }
+}

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Emprega Tamandaré</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- ==========================================
+         CABEÇALHO
+         ========================================== -->
+
+    <header class="header">
+      <div class="header-container">
+        <img src="logo.png" alt="Emprega Tamandaré" class="logo" />
+
+        <div class="header-text">
+          <h1>
+            Encontre profissionais
+            <span>em Tamandaré</span>
+          </h1>
+
+          <p>Conectando empresas a talentos da nossa cidade.</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- ==========================================
+         CONTEÚDO PRINCIPAL
+         ========================================== -->
+
+    <main>
+      <section class="candidatos-section">
+        <div class="container">
+          <!-- TÍTULO -->
+
+          <div class="section-header">
+            <div>
+              <h2>Candidatos</h2>
+
+              <p>Encontre profissionais cadastrados na plataforma.</p>
+            </div>
+
+            <span class="contador" id="contador"> 1 candidato </span>
+          </div>
+
+          <!-- ==========================================
+                     FILTROS
+                     ========================================== -->
+
+          <div class="filtros">
+            <div class="campo-busca">
+              <label for="busca"> Buscar </label>
+
+              <input
+                type="text"
+                id="busca"
+                placeholder="Nome, experiência ou curso..."
+              />
+            </div>
+
+            <div class="campo-filtro">
+              <label for="escolaridade"> Escolaridade </label>
+
+              <select id="escolaridade">
+                <option value="">Todas</option>
+
+                <option value="NÍVEL FUNDAMENTAL">Nível Fundamental</option>
+
+                <option value="NÍVEL MÉDIO">Nível Médio</option>
+
+                <option value="NÍVEL SUPERIOR">Nível Superior</option>
+              </select>
+            </div>
+
+            <button class="btn-limpar" id="limparFiltros" type="button">
+              Limpar filtros
+            </button>
+          </div>
+
+          <!-- ==========================================
+                     LISTA DE CANDIDATOS
+                     ========================================== -->
+
+          <div id="listaCandidatos" class="lista-candidatos"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==========================================
+         RODAPÉ
+         ========================================== -->
+
+    <footer>
+      <div class="container footer-content">
+        <div class="footer-setur">
+          <div class="footer-logo-box">
+            <img src="setur.png" alt="SETUR Tamandaré" class="logo-setur" />
+          </div>
+
+          <div class="footer-setur-text">
+            <p>Uma iniciativa da</p>
+
+            <strong> SETUR Tamandaré </strong>
+
+            <span> Secretaria de Turismo de Tamandaré </span>
+          </div>
+        </div>
+
+        <div class="footer-prefeitura">
+          <img
+            src="prefeitura.png"
+            alt="Prefeitura de Tamandaré"
+            class="logo-prefeitura"
+          />
+        </div>
+
+        <div class="footer-mensagem">
+          <span> Trabalhando por </span>
+
+          <strong> mais oportunidades </strong>
+
+          <span> para nossa gente. </span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
