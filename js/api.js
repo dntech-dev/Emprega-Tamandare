@@ -3,7 +3,7 @@
 // ==========================================
 
 const API_URL =
-  "https://script.google.com/macros/s/AKfycbwJdudzR1Y1TPq4KLrHLVD6PwOucQABI6hIL0cPIEJCIZGbvH_o9FTqqLzuPZlWNuA/exec";
+  "https://script.google.com/macros/s/AKfycbwVhVffJTmi6ax7nGhY-fwOoaNTygnyaRVKP-Y73WXA2XmHPnH5zlX6xOVuHQNigbkn/exec";
 
 // ==========================================
 // BUSCAR CANDIDATOS

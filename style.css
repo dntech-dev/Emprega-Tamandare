@@ -488,7 +488,7 @@ body {
 }
 
 /* ==========================================
-   TELEFONE
+   footer
    ========================================== */
 
 .card-footer {
@@ -503,6 +503,17 @@ body {
 
 .card-footer span {
   color: var(--texto-secundario);
+}
+
+.card-footer .idade {
+  color: var(--azul);
+  font-weight: bold;
+}
+
+.telefone {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .card-footer a {

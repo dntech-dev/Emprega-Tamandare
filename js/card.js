@@ -26,6 +26,14 @@ function verificarCursosLongos() {
 // CRIAR CARD
 // ==========================================
 
+// ==========================================
+// CRIAR CARD
+// ==========================================
+
+// ==========================================
+// CRIAR CARD
+// ==========================================
+
 function criarCard(candidato) {
   const inicial = candidato.nome ? candidato.nome.charAt(0).toUpperCase() : "?";
 
@@ -105,17 +113,29 @@ function criarCard(candidato) {
 
             <div class="card-footer">
 
-                <span>
-                    Telefone
+                <span class="idade">
+                    ${
+                      candidato.idade
+                        ? `${candidato.idade} anos`
+                        : "Idade não informada"
+                    }
                 </span>
 
-                <a
-                    href="https://wa.me/55${String(candidato.telefone).replace(/\D/g, "")}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    ${formatarTelefone(candidato.telefone)}
-                </a>
+                <div class="telefone">
+
+                    <span>
+                        Telefone
+                    </span>
+
+                    <a
+                        href="https://wa.me/55${String(candidato.telefone).replace(/\D/g, "")}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        ${formatarTelefone(candidato.telefone)}
+                    </a>
+
+                </div>
 
             </div>
 
