@@ -493,17 +493,11 @@ body {
 
 .card-footer {
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   margin-top: auto;
-
   padding-top: 15px;
-
   border-top: 1px solid var(--borda);
-
   font-size: 13px;
 }
 
@@ -511,8 +505,15 @@ body {
   color: var(--texto-secundario);
 }
 
-.card-footer strong {
+.card-footer a {
   color: var(--azul);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.card-footer a:hover {
+  color: var(--ciano);
+  text-decoration: underline;
 }
 
 /* ==========================================

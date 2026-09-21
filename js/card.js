@@ -109,9 +109,13 @@ function criarCard(candidato) {
                     Telefone
                 </span>
 
-                <strong>
+                <a
+                    href="https://wa.me/55${String(candidato.telefone).replace(/\D/g, "")}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     ${formatarTelefone(candidato.telefone)}
-                </strong>
+                </a>
 
             </div>
 
