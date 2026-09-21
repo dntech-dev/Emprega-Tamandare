@@ -133,7 +133,7 @@ body {
 
   background-image:
     linear-gradient(90deg, rgba(3, 61, 96, 0.88), rgba(3, 61, 96, 0.35)),
-    url("fundo-tamandare.jpg");
+    url("assets/fundo-tamandare.jpg");
 
   background-size: cover;
 
